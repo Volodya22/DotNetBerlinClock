@@ -11,6 +11,7 @@ namespace BerlinClock.Domain.Models.Factory
     {
         public ITimePrinter Create()
         {
+            // Creating a printer for each row of clock
             var converters = new List<ITimePrinter>()
             {
                 new TimePrinter(new SecondsConverter(), new SecondsPrinter()),

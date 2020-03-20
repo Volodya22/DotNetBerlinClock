@@ -1,15 +1,15 @@
 ﻿namespace BerlinClock.Domain.Interfaces.Factory
 {
     /// <summary>
-    /// 
+    /// Factory interface
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="T">Type of object</typeparam>
     public interface IFactory<T>
     {
         /// <summary>
-        /// 
+        /// Creation of an object
         /// </summary>
-        /// <returns></returns>
+        /// <returns>New object</returns>
         T Create();
     }
 }

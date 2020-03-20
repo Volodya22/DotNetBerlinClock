@@ -17,6 +17,7 @@ namespace BerlinClock.Domain.Models.Row.Printers
             {
                 if (i < number)
                 {
+                    // Making every third light red
                     if (i % 3 == 2)
                     {
                         sb.Append(Constants.Red);
