@@ -7,7 +7,7 @@ namespace BerlinClock.Domain.Models.Row.Converters
     {
         public int Convert(TimeSpan time)
         {
-            return time.Hours / 5;
+            return (int)time.TotalHours / 5;
         }
     }
 }

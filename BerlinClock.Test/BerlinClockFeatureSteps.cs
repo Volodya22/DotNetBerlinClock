@@ -1,17 +1,22 @@
-﻿using System;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Linq;
+using BerlinClock.Domain.Interfaces.Time;
+using BerlinClock.Domain.Models.Time;
+using BerlinClock.Domain.Models.Factory;
 
 namespace BerlinClock
 {
     [Binding]
     public class TheBerlinClockSteps
     {
-        private ITimeConverter berlinClock = new TimeConverter();
-        private String theTime;
+        private ITimeConverter berlinClock;
+        private string theTime;
 
-        
+        public TheBerlinClockSteps()
+        {
+            berlinClock = new TimeConverter(new TimeParser(), new ConverterFactory().Create());
+        }
+
         [When(@"the time is ""(.*)""")]
         public void WhenTheTimeIs(string time)
         {
@@ -23,6 +28,5 @@ namespace BerlinClock
         {
             Assert.AreEqual(berlinClock.ConvertTime(theTime), theExpectedBerlinClockOutput);
         }
-
     }
 }

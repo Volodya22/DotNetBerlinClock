@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace BerlinClock.Domain.Models
 {
-    public class BerlinClockPrinter : ITimePrinter
+    class BerlinClockPrinter : ITimePrinter
     {
         private readonly IEnumerable<ITimePrinter> _timePrinters;
 
